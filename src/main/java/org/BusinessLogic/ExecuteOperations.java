@@ -23,6 +23,6 @@ public class ExecuteOperations {
             }
 
         }
-        sub.setProduct(sub.getDepth()* sub.getHorizontal());
+        sub.setProduct(sub.getDepth()* sub.getHorizontal());//si
     }
 }
