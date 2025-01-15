@@ -3,6 +3,8 @@ package org.Model;
 public class SubmarineState {
     private double horizontal;
     private double depth;
+
+    private double aim;
     private double product;
 
     public double getHorizontal() {
@@ -27,5 +29,12 @@ public class SubmarineState {
 
     public void setProduct(double product) {
         this.product = product;
+    }
+    public double getAim() {
+        return aim;
+    }
+
+    public void setAim(double aim) {
+        this.aim = aim;
     }
 }

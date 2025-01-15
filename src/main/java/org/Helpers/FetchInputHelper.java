@@ -1,9 +1,17 @@
 package org.Helpers;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
+
 
 public class FetchInputHelper {
 
@@ -31,6 +39,22 @@ public class FetchInputHelper {
             }
         }
         return files[option-1];
+    }
+
+    /**
+     *
+     * @return
+     * @throws IOException
+     */
+    public Map<String, String[]> jsonToHashMap() throws IOException {
+        String jsonFilePath = "scanner-data.json";
+        Path jsonPath = Paths.get(jsonFilePath);
+        String jsonData = new String(Files.readAllBytes(jsonPath));
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, String[]> dataMap = objectMapper.readValue(jsonData,
+                new TypeReference<Map<String, String[]>>() {
+                });
+        return dataMap;
     }
 
     /**

@@ -26,6 +26,8 @@ public class FetchInputHelperTest {
         assertTrue(helper.checkValid(instruction1));
         instruction1 = new String []{"FoRwarD", "80"};
         assertTrue(helper.checkValid(instruction1));
+        instruction1 = new String []{"up", "a"};
+        assertFalse(helper.checkValid(instruction1));
     }
 
 
